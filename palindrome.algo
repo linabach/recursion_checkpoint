@@ -1,0 +1,16 @@
+FUNCTION is_palindrome(str) : STRING
+VAR
+    result:STRING:=""
+    j:INTEGER
+BEGIN
+    j:=str.length
+    IF (j==1) THEN
+        result:="it is palindrome"
+    END_IF
+    IF (str.charAt(0)==str.charAt(j-1)) THEN
+        result:="it is not palindrome"
+    ELSE
+        result:=is_palindrome(str.substring(1, j-1))
+    END_IF
+    RETURN result ;
+END
